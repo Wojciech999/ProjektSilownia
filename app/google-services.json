@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "562061469983",
+    "firebase_url": "https://silowniaproject-default-rtdb.firebaseio.com",
+    "project_id": "silowniaproject",
+    "storage_bucket": "silowniaproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562061469983:android:293e6fd22b9ecb2628a82a",
+        "android_client_info": {
+          "package_name": "com.example.projektsilownia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562061469983-fr66g2qucbjlfeh02kcmeii550pi607c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK_OLN-FRAjfk14fuHwc1cqaMsazKKRQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562061469983-fr66g2qucbjlfeh02kcmeii550pi607c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
