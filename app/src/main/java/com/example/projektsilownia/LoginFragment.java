@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.projektsilownia.mainMenu.MainMenuActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -95,9 +96,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getContext(), "Pomyslnie zalogowano", Toast.LENGTH_SHORT).show();
+                    Intent intent2 = new Intent(getContext().getApplicationContext(), MainMenuActivity.class);
+                    startActivity(intent2);
                 } else {
                     Toast.makeText(getContext(), "Nie udalo sie zalogowac", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
