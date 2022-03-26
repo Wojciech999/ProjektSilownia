@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A4763"
+    android:background="#454545"
     tools:context=".RegistrationFragment">
 
 
@@ -15,6 +15,188 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPass">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|clip_vertical|left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="Podaj wiek (Wymagane): "
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_plus_old"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="12dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="+" />
+
+            <EditText
+                android:id="@+id/number_old_ediText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="lat"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_minus_old"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="-" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|clip_vertical|left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="Podaj wzrost (Wymagane): "
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_plus_height"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="12dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="+" />
+
+            <EditText
+                android:id="@+id/number_height_ediText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="cm"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_minus_height"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="-" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|clip_vertical|left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="Podaj wagę (Wymagane): "
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_plus_weight"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="12dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="+"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/number_weight_ediText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="#FFFFFF"
+                android:text="kg"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_minus_weight"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:foregroundGravity="center_vertical|center"
+                android:text="-" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/titleLogin"
@@ -31,11 +213,9 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register_button"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="125dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/custom_btn"
             android:foreground="?attr/selectableItemBackground"
             android:text="Zarejestruj się"
@@ -43,8 +223,8 @@
             android:textStyle="bold"
             android:translationZ="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPass"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayoutPass"
             tools:ignore="OnClick" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -53,7 +233,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="16dp"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"

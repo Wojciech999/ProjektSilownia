@@ -10,55 +10,253 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#FFFFFF"
                 android:orientation="vertical"
-                android:weightSum="10">
+                android:weightSum="2">
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_weight="2"
-                    android:background="@color/black">
+                    android:layout_height="460dp"
+                    android:layout_weight="1"
+                    android:background="#454545">
 
-                    <ImageView
+
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/imageView6"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
-                        android:layout_centerInParent="true"
-                        android:layout_margin="5dp"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        android:src="@drawable/ic_baseline_person_24"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="Nazwa użytkownika: "
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="Wiek (lata): "
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="Waga (kg): "
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:gravity="center_horizontal"
+                            android:textSize="2sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="560dp"
+                            android:layout_marginLeft="175dp"
+                            android:layout_marginTop="20dp"
+                            android:background="#E91E63" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="320:20"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="21"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintStart_toStartOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="3445 kcal"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                        app:layout_constraintStart_toStartOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="Wzrost (cm):"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="Jan Kowalski"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/textViewOld"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="28"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                        app:layout_constraintStart_toEndOf="@+id/textView2"
+                        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                    <TextView
+                        android:id="@+id/textViewHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="28"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                        app:layout_constraintStart_toEndOf="@+id/textView8"
+                        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                    <TextView
+                        android:id="@+id/textViewWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="sans-serif-light"
+                        android:shadowColor="#FFFFFF"
+                        android:text="88"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                        app:layout_constraintStart_toEndOf="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:foregroundGravity="center_vertical"
+                        android:src="@drawable/ic_icon_time_64dp"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                        app:layout_constraintStart_toEndOf="@+id/imageView3"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:foregroundGravity="center_vertical"
+                        android:src="@drawable/ic_icon_bmi_64dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:foregroundGravity="center_vertical"
+                        android:src="@drawable/ic_icon_kcal_64dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <GridLayout
                     android:id="@+id/mainGrid"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="8"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:alignmentMode="alignBounds"
+                    android:background="#454545"
                     android:columnCount="2"
                     android:columnOrderPreserved="true"
                     android:padding="5dp"
                     android:rowCount="5">
-
-
-                    <!-- Row 2 -->
-
-                    <!-- Column 1 -->
-
-                    <!-- Column 2 -->
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
@@ -69,6 +267,7 @@
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="16dp"
                         android:clickable="true"
@@ -88,7 +287,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_baseline_login_24" />
+                                android:src="@drawable/ic_baseline_fitness_center_24" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -138,13 +337,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_baseline_login_24" />
+                                android:src="@drawable/ic_baseline_sports_kabaddi_24" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Sell Product"
+                                android:text="Podstawowe"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -171,6 +370,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="16dp"
+                        android:backgroundTint="#FFFFFF"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -188,23 +388,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_baseline_login_24" />
+                                android:src="@drawable/ic_baseline_settings_24" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Purchases"
+                                android:text="Ustawienia"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text=""
-                                android:textSize="10sp" />
 
                         </LinearLayout>
 
@@ -222,6 +415,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="16dp"
+                        android:backgroundTint="#FFFFFF"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -245,17 +439,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Sales"
+                                android:text="Wyloguj"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Milk Sale Entries"
-                                android:textSize="10sp" />
 
                         </LinearLayout>
 
@@ -265,7 +452,6 @@
 
             </LinearLayout>
 
-        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

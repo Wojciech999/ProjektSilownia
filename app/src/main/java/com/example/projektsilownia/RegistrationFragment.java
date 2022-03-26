@@ -1,17 +1,17 @@
 package com.example.projektsilownia;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.projektsilownia.usermodel.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,8 +32,19 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
     private Button arrowBack_button, register_button;
     private TextInputEditText login_editText, email_editText, password_editText;
 
+    private EditText number_old_ediText, number_height_ediText, number_weight_ediText;
+
+    private Button btn_plus_old, btn_minus_old;
+    private Button btn_plus_height, btn_minus_height;
+    private Button btn_plus_weight, btn_minus_weight;
+
+    int i = 0, old = 0, height = 0, weight = 0;
     private FirebaseAuth mAuth;
 
+    private double bmi = 0;
+    private double valueHeight = 0;
+    private double valueWeight = 0;
+    private String resultbmi;
 
     public RegistrationFragment() {
         // Required empty public constructor
@@ -72,6 +83,25 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         email_editText = (TextInputEditText) rootView.findViewById(R.id.email_editText);
         password_editText = (TextInputEditText) rootView.findViewById(R.id.password_editText);
 
+        number_old_ediText = (EditText) rootView.findViewById(R.id.number_old_ediText);
+        number_height_ediText = (EditText) rootView.findViewById(R.id.number_height_ediText);
+        number_weight_ediText = (EditText) rootView.findViewById(R.id.number_weight_ediText);
+
+        btn_plus_old = (Button) rootView.findViewById(R.id.btn_plus_old);
+        btn_plus_old.setOnClickListener(this);
+        btn_minus_old = (Button) rootView.findViewById(R.id.btn_minus_old);
+        btn_minus_old.setOnClickListener(this);
+
+        btn_plus_height = (Button) rootView.findViewById(R.id.btn_plus_height);
+        btn_plus_height.setOnClickListener(this);
+        btn_minus_height = (Button) rootView.findViewById(R.id.btn_minus_height);
+        btn_minus_height.setOnClickListener(this);
+
+        btn_plus_weight = (Button) rootView.findViewById(R.id.btn_plus_weight);
+        btn_plus_weight.setOnClickListener(this);
+        btn_minus_weight = (Button) rootView.findViewById(R.id.btn_minus_weight);
+        btn_minus_weight.setOnClickListener(this);
+
         return rootView;
 
     }
@@ -87,7 +117,39 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
                 break;
             case R.id.register_button:
                 regUser();
-
+                break;
+            case R.id.btn_plus_old://+
+                old++;
+                number_old_ediText.setText(String.valueOf(old));
+                break;
+            case R.id.btn_minus_old://-
+                if (String.valueOf(number_old_ediText.getText()).equals("0")) {
+                } else {
+                    old--;
+                    number_old_ediText.setText(String.valueOf(old));
+                }
+                break;
+            case R.id.btn_plus_height://+
+                height++;
+                number_height_ediText.setText(String.valueOf(height));
+                break;
+            case R.id.btn_minus_height://-
+                if (String.valueOf(number_height_ediText.getText()).equals("0")) {
+                } else {
+                    height--;
+                    number_height_ediText.setText(String.valueOf(height));
+                }
+                break;
+            case R.id.btn_plus_weight://+
+                weight++;
+                number_weight_ediText.setText(String.valueOf(weight));
+                break;
+            case R.id.btn_minus_weight://-
+                if (String.valueOf(number_weight_ediText.getText()).equals("0")) {
+                } else {
+                    weight--;
+                    number_weight_ediText.setText(String.valueOf(weight));
+                }
                 break;
         }
     }
@@ -96,6 +158,13 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         String login = login_editText.getText().toString().trim();
         String email = email_editText.getText().toString().trim();
         String password = password_editText.getText().toString().trim();
+
+        String old = number_old_ediText.getText().toString().trim();
+
+        valueHeight = Integer.parseInt(number_height_ediText.getText().toString());
+        valueWeight = Integer.parseInt(number_weight_ediText.getText().toString());
+        bmi = (valueWeight / (valueHeight * valueHeight)) * 10000;
+        resultbmi = Double.toString(bmi);
 
         FirebaseDatabase.getInstance().getReference("Users")
                 .child(login).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -121,12 +190,34 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             UserModel userModel = new UserModel(login, email);
+
+                                            Map<String, Object> parameters = new HashMap<String, Object>();
+                                            parameters.put("old", old);
+                                            parameters.put("weight", valueWeight);
+                                            parameters.put("height", valueHeight);
+                                            parameters.put("bmi", resultbmi);
+
                                             FirebaseDatabase.getInstance().getReference("Users")
                                                     .child(login).child("Settings")
                                                     .setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
+
+                                                        FirebaseDatabase.getInstance().getReference("Users")
+                                                                .child(login).child("Parameters")
+                                                                .setValue(parameters).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Fragment fragment = null;
+                                                                    fragment = new LoginFragment();
+                                                                    loadFragment(fragment);
+                                                                } else {
+                                                                    Toast.makeText(getContext(), "błąd 1", Toast.LENGTH_SHORT).show();
+                                                                }
+                                                            }
+                                                        });
                                                         Fragment fragment = null;
                                                         fragment = new LoginFragment();
                                                         loadFragment(fragment);
@@ -151,11 +242,9 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(getContext(), "błąd bazy danych", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
-
 
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
