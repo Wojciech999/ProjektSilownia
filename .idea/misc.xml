@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/circular.xml" value="0.1045" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/custom_btn.xml" value="0.1285" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_baseline_error_outline_24.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_baseline_fitness_center_24.xml" value="0.1045" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_baseline_local_fire_department_24.xml" value="0.1045" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1045" />
@@ -15,11 +16,18 @@
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_icon_bmi_64dp.xml" value="0.1045" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_icon_kcal_64dp.xml" value="0.1045" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_icon_time_64dp.xml" value="0.1045" />
-        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/ic_outline_done_24.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/progressbar_background.xml" value="0.1135" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/drawable/toast_background.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/activity_main_menu.xml" value="0.1721014492753623" />
-        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/custom_dialog_logout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/custom_progressbar.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/custom_toast.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_home.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_login.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_registration.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_settings.xml" value="0.3023255813953488" />
         <entry key="..\:/Users/user/Desktop/ProjektSilownia2/app/src/main/res/layout/fragment_welcome.xml" value="0.14666666666666667" />
       </map>
     </option>

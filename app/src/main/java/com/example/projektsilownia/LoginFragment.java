@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.projektsilownia.custom.CustomProgressBar;
+import com.example.projektsilownia.custom.CustomToast;
 import com.example.projektsilownia.mainMenu.MainMenuActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +29,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     private Button arrowBack_button, login_button;
     private TextInputEditText email_editText, password_editText;
     private FirebaseAuth mAuth;
+    CustomToast customToast = new CustomToast();
 
     public LoginFragment() {
         // Required empty public constructor
@@ -55,7 +58,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         mAuth = FirebaseAuth.getInstance();
 
-
         arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
         arrowBack_button.setOnClickListener(this);
 
@@ -66,7 +68,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         password_editText = (TextInputEditText) rootView.findViewById(R.id.password_editText);
 
         return rootView;
-
     }
 
     @Override
@@ -81,29 +82,35 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             case R.id.login_button:
                 loginInApp();
             break;
-
         }
     }
 
     private void loginInApp() {
+        CustomProgressBar customProgressBar = new CustomProgressBar(getActivity(), "Trwa logowanie");
+        customProgressBar.startProgressBarDialog();
+
         String email = email_editText.getText().toString().trim();
         String password = password_editText.getText().toString().trim();
-
-        Toast.makeText(getContext(), "ładowanie", Toast.LENGTH_SHORT).show();
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getContext(), "Pomyslnie zalogowano", Toast.LENGTH_SHORT).show();
+
+                    customProgressBar.dismissDialog();
+
                     Intent intent2 = new Intent(getContext().getApplicationContext(), MainMenuActivity.class);
                     startActivity(intent2);
+
+                    customToast.showToast(getActivity(), "Pomyslnie zalogowano", R.drawable.ic_outline_done_24);
+
                 } else {
-                    Toast.makeText(getContext(), "Nie udalo sie zalogowac", Toast.LENGTH_SHORT).show();
+                    customProgressBar.dismissDialog();
+
+                    customToast.showToast(getActivity(), "Logowanie nie powiodło się", R.drawable.ic_baseline_error_outline_24);
                 }
             }
         });
-
     }
 
     private void loadFragment(Fragment fragment) {

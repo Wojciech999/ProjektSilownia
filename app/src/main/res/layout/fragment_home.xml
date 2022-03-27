@@ -10,9 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -22,13 +19,13 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="460dp"
+                    android:layout_height="510dp"
                     android:layout_weight="1"
                     android:background="#454545">
 
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/imageViewProfil"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_marginStart="32dp"
@@ -49,8 +46,8 @@
                         android:shadowColor="#FFFFFF"
                         android:text="Nazwa użytkownika: "
                         android:textColor="#FFFFFF"
-                        app:layout_constraintStart_toEndOf="@+id/imageView6"
-                        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+                        app:layout_constraintStart_toEndOf="@+id/imageViewProfil"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewProfil" />
 
                     <TextView
                         android:id="@+id/textView2"
@@ -62,7 +59,7 @@
                         android:shadowColor="#FFFFFF"
                         android:text="Wiek (lata): "
                         android:textColor="#FFFFFF"
-                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewProfil"
                         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                     <TextView
@@ -75,7 +72,7 @@
                         android:shadowColor="#FFFFFF"
                         android:text="Waga (kg): "
                         android:textColor="#FFFFFF"
-                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewProfil"
                         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                     <LinearLayout
@@ -88,7 +85,7 @@
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3">
+                        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -112,7 +109,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="320:20"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -121,12 +118,12 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textViewBMI"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="21"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -140,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="3445 kcal"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -151,15 +148,14 @@
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
+                        android:layout_height="19dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
                         android:text="Wzrost (cm):"
                         android:textColor="#FFFFFF"
-                        app:layout_constraintStart_toEndOf="@+id/textView"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+                        app:layout_constraintStart_toStartOf="@+id/textView3"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                     <TextView
                         android:id="@+id/textViewName"
@@ -168,7 +164,7 @@
                         android:layout_marginStart="2dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="Jan Kowalski"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="@+id/textView"
                         app:layout_constraintStart_toEndOf="@+id/textView"
@@ -181,7 +177,7 @@
                         android:layout_marginStart="2dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="28"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="@+id/textView2"
                         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -194,7 +190,8 @@
                         android:layout_marginStart="2dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="28"
+
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="@+id/textView8"
                         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -207,7 +204,7 @@
                         android:layout_marginStart="2dp"
                         android:fontFamily="sans-serif-light"
                         android:shadowColor="#FFFFFF"
-                        android:text="88"
+                        android:text="Ładowanie..."
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="@+id/textView3"
                         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -228,7 +225,7 @@
                         android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="32dp"
+                        android:layout_marginEnd="42dp"
                         android:foregroundGravity="center_vertical"
                         android:src="@drawable/ic_icon_bmi_64dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -238,7 +235,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="32dp"
+                        android:layout_marginStart="42dp"
                         android:foregroundGravity="center_vertical"
                         android:src="@drawable/ic_icon_kcal_64dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -360,6 +357,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_settings"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_row="4"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toast_layout_root"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/progressbar_background">
+
+    <ImageView
+        android:id="@+id/imageViewToast"
+        android:src="@drawable/ic_outline_done_24"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView android:id="@+id/textViewToast"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="asd asdads asdcommon_google_play_services_enable_button"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
