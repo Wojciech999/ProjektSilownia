@@ -81,7 +81,7 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
 
         login_editText = (TextInputEditText) rootView.findViewById(R.id.login_editText);
         email_editText = (TextInputEditText) rootView.findViewById(R.id.email_editText);
-        password_editText = (TextInputEditText) rootView.findViewById(R.id.password_editText);
+        password_editText = (TextInputEditText) rootView.findViewById(R.id.editTextNewPassword);
 
         number_old_ediText = (EditText) rootView.findViewById(R.id.number_old_ediText);
         number_height_ediText = (EditText) rootView.findViewById(R.id.number_height_ediText);

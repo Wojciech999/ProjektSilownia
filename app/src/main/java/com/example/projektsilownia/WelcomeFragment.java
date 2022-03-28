@@ -42,7 +42,7 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
-        login_button = (Button) rootView.findViewById(R.id.login_button);
+        login_button = (Button) rootView.findViewById(R.id.btnChangePassword);
         login_button.setOnClickListener(this);
 
         register_button = (Button) rootView.findViewById(R.id.register_button);
@@ -58,7 +58,7 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
 
         switch (view.getId()){
-            case R.id.login_button:
+            case R.id.btnChangePassword:
                 fragment = new LoginFragment();
                 loadFragment(fragment);
                 break;

@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.projektsilownia.custom.CustomProgressBar;
 import com.example.projektsilownia.custom.CustomToast;
@@ -61,11 +60,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
         arrowBack_button.setOnClickListener(this);
 
-        login_button = (Button) rootView.findViewById(R.id.login_button);
+        login_button = (Button) rootView.findViewById(R.id.btnChangePassword);
         login_button.setOnClickListener(this);
 
         email_editText = (TextInputEditText) rootView.findViewById(R.id.email_editText);
-        password_editText = (TextInputEditText) rootView.findViewById(R.id.password_editText);
+        password_editText = (TextInputEditText) rootView.findViewById(R.id.editTextNewPassword);
 
         return rootView;
     }
@@ -79,7 +78,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                 fragment = new WelcomeFragment();
                 loadFragment(fragment);
                 break;
-            case R.id.login_button:
+            case R.id.btnChangePassword:
                 loginInApp();
             break;
         }
