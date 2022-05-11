@@ -1,40 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#454545"
-    tools:context=".settings.ChangeParametersFragment">
+    tools:context=".settings.ChangeLoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/arrowBack_button"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/ic_baseline_keyboard_arrow_left_24"
-            android:foreground="?attr/selectableItemBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/titleLogin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="Zmiana Parametrów"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="@+id/arrowBack_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/arrowBack_button" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/arrowBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/titleFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Zmień parametry użytkownika"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/change_pmtrs_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|clip_vertical|left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="Podaj wiek: "
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_plus_old"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/number_old_ediText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:shadowColor="#FFFFFF"
+                    android:text="0"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="lat"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_minus_old"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="-" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|clip_vertical|left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="Podaj wzrost: "
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_plus_height"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/number_height_ediText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:shadowColor="#FFFFFF"
+                    android:text="0"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="cm"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_minus_height"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="-" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|clip_vertical|left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="Podaj wagę: "
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_plus_weight"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="+"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/number_weight_ediText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:shadowColor="#FFFFFF"
+                    android:text="0"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:shadowColor="#FFFFFF"
+                    android:text="kg"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_minus_weight"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center_vertical|center"
+                    android:text="-" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/change_pmtrs_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/custom_btn"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Zmień parametry użytkownika"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:translationZ="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="OnClick" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

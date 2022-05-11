@@ -11,42 +11,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/arrowBack_button"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/ic_baseline_keyboard_arrow_left_24"
-            android:foreground="?attr/selectableItemBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/titleLogin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="Ustawienia"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="@+id/arrowBack_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/arrowBack_button" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/arrowBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/titleFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Ustawienia"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/arrowBack_button">
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout">
 
             <TextView
                 android:id="@+id/textView1"
@@ -60,7 +69,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/btn_changeLoginName"
+            android:id="@+id/btn_changeLoginEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -114,7 +123,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_changeLoginName">
+            app:layout_constraintTop_toBottomOf="@+id/btn_changeLoginEmail">
 
             <TextView
                 android:id="@+id/textView4"

@@ -2,6 +2,7 @@ package com.example.projektsilownia.settings;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import com.example.projektsilownia.R;
 
 public class AvailabilityConditionsFragment extends Fragment implements View.OnClickListener {
 
-    private Button arrowBack_button;
+    private AppCompatImageButton arrowBack_button;
 
 
     public AvailabilityConditionsFragment() {
@@ -42,7 +43,7 @@ public class AvailabilityConditionsFragment extends Fragment implements View.OnC
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_availability_conditions, container, false);
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
         return rootView;
@@ -53,7 +54,7 @@ public class AvailabilityConditionsFragment extends Fragment implements View.OnC
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 if (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStack();
                 }

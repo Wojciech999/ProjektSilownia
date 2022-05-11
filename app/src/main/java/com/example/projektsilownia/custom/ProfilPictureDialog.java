@@ -3,6 +3,7 @@ package com.example.projektsilownia.custom;
 import static android.app.Activity.RESULT_OK;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -64,10 +66,18 @@ public class ProfilPictureDialog extends DialogFragment implements View.OnClickL
 
     public String userOnline;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.custom_profil_picture_dialog, container, false);
+
 
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -103,6 +113,12 @@ public class ProfilPictureDialog extends DialogFragment implements View.OnClickL
         query.addListenerForSingleValueEvent(valueEventListener);
 
         return rootView;
+    }
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        return super.onCreateDialog(savedInstanceState);
     }
 
     public String getUserOnline() {

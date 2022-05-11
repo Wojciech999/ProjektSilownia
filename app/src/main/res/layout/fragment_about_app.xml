@@ -11,47 +11,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/arrowBack_button"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/ic_baseline_keyboard_arrow_left_24"
-            android:foreground="?attr/selectableItemBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/titleLogin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="O Aplikacji"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="@+id/arrowBack_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/arrowBack_button" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/arrowBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/titleFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Informacje o aplikacji"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="32dp"
-            android:paddingBottom="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:paddingLeft="32dp"
+            android:paddingTop="32dp"
             android:paddingRight="32dp"
-            android:layout_marginTop="64dp"
-            android:textSize="14dp"
-            android:textColor="@color/white"
+            android:paddingBottom="32dp"
             android:text="Aplikacja Sparta została stworzona w celu polepszania swojej sylwetki i monitorowania umiejetnosci w oparciu o kanon ju-jidsu "
+            android:textColor="@color/white"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.projektsilownia.R;
-import com.example.projektsilownia.mainMenu.HomeFragment;
 
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
-    private Button arrowBack_button;
+    private AppCompatImageButton arrowBack_button;
     private LinearLayout btn_changeLoginName, btn_changePasswordName,
             btn_changeParameters, btn_aboutApp, btn_warning;
 
@@ -40,10 +40,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
-        btn_changeLoginName = (LinearLayout) rootView.findViewById(R.id.btn_changeLoginName);
+        btn_changeLoginName = (LinearLayout) rootView.findViewById(R.id.btn_changeLoginEmail);
         btn_changeLoginName.setOnClickListener(this);
 
         btn_changePasswordName = (LinearLayout) rootView.findViewById(R.id.btn_changePasswordName);
@@ -66,13 +66,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 if (getFragmentManager().getBackStackEntryCount() > 0 ) {
                     getFragmentManager().popBackStack();
                 }
                 break;
 
-            case R.id.btn_changeLoginName:
+            case R.id.btn_changeLoginEmail:
                 fragment = new ChangeLoginFragment();
                 loadFragment(fragment);
                 break;

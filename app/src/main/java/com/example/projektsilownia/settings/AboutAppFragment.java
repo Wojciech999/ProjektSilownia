@@ -6,13 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
 import com.example.projektsilownia.R;
 
 public class AboutAppFragment extends Fragment implements View.OnClickListener {
 
-    private Button arrowBack_button;
+    private AppCompatImageButton arrowBack_button;
 
     public AboutAppFragment() {
         // Required empty public constructor
@@ -39,7 +40,7 @@ public class AboutAppFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about_app, container, false);
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
         return rootView;
@@ -50,7 +51,7 @@ public class AboutAppFragment extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 if (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStack();
                 }

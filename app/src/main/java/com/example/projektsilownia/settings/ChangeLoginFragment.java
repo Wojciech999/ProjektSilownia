@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
 import com.example.projektsilownia.R;
@@ -23,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ChangeLoginFragment extends Fragment implements View.OnClickListener {
 
-    private ImageButton arrowBack_button;
+    private AppCompatImageButton arrowBack_button;
     private TextInputEditText userName_editText, repeateUserName_editText, password_editText;
     private Button change_button;
     private String username, repeatUsername, password;
@@ -58,7 +59,7 @@ public class ChangeLoginFragment extends Fragment implements View.OnClickListene
 
         mAuth = FirebaseAuth.getInstance();
 
-        arrowBack_button = (ImageButton) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
         userName_editText = (TextInputEditText) rootView.findViewById(R.id.UserName_editText);
@@ -76,7 +77,7 @@ public class ChangeLoginFragment extends Fragment implements View.OnClickListene
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 if (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStack();
                 }

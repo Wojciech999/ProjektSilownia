@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/progressbar_background"
     android:orientation="horizontal"
+    android:layout_margin="10dp"
     android:padding="10dp"
     android:layout_gravity="center_horizontal"
     app:circularflow_radiusInDP="2dp">

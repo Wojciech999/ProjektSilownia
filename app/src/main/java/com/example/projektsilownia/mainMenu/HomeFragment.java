@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,6 +116,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         circleImageView = (CircleImageView) rootView.findViewById(R.id.imageViewProfil);
         circleImageView.setOnClickListener(this);
 
+        rootView.setFocusableInTouchMode(true);
+        rootView.requestFocus();
+        rootView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
         return rootView;
     }
 
@@ -137,6 +153,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
     }
+
+
 
     public String getUserOnline() {
         return userOnline;

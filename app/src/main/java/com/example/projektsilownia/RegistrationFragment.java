@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -29,7 +30,8 @@ import java.util.Map;
 
 public class RegistrationFragment extends Fragment implements View.OnClickListener {
 
-    private Button arrowBack_button, register_button;
+    private AppCompatImageButton arrowBack_button;
+    private Button register_button;
     private TextInputEditText login_editText, email_editText, password_editText;
 
     private EditText number_old_ediText, number_height_ediText, number_weight_ediText;
@@ -44,7 +46,6 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
     private double bmi = 0;
     private double valueHeight = 0;
     private double valueWeight = 0;
-    private String resultbmi;
 
     public RegistrationFragment() {
         // Required empty public constructor
@@ -74,7 +75,7 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         View rootView = inflater.inflate(R.layout.fragment_registration, container, false);
         mAuth = FirebaseAuth.getInstance();
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
         register_button = (Button) rootView.findViewById(R.id.register_button);
         register_button.setOnClickListener(this);
@@ -111,7 +112,7 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 fragment = new WelcomeFragment();
                 loadFragment(fragment);
                 break;
@@ -160,11 +161,10 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         String password = password_editText.getText().toString().trim();
 
         String old = number_old_ediText.getText().toString().trim();
-
         valueHeight = Integer.parseInt(number_height_ediText.getText().toString());
         valueWeight = Integer.parseInt(number_weight_ediText.getText().toString());
         bmi = (valueWeight / (valueHeight * valueHeight)) * 10000;
-        resultbmi = Double.toString(bmi);
+        String resultbmi = String.format("%.1f", bmi);
 
         FirebaseDatabase.getInstance().getReference("Users")
                 .child(login).addListenerForSingleValueEvent(new ValueEventListener() {

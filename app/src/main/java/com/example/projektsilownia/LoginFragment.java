@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.projektsilownia.custom.CustomProgressBar;
 import com.example.projektsilownia.custom.CustomToast;
@@ -25,7 +27,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFragment extends Fragment implements View.OnClickListener{
 
-    private Button arrowBack_button, login_button;
+    private AppCompatImageButton arrowBack_button;
+    private Button login_button;
     private TextInputEditText email_editText, password_editText;
     private FirebaseAuth mAuth;
     CustomToast customToast = new CustomToast();
@@ -57,7 +60,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         mAuth = FirebaseAuth.getInstance();
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
         login_button = (Button) rootView.findViewById(R.id.btnChangePassword);
@@ -74,7 +77,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 fragment = new WelcomeFragment();
                 loadFragment(fragment);
                 break;
@@ -85,31 +88,35 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     }
 
     private void loginInApp() {
-        CustomProgressBar customProgressBar = new CustomProgressBar(getActivity(), "Trwa logowanie");
-        customProgressBar.startProgressBarDialog();
 
         String email = email_editText.getText().toString().trim();
         String password = password_editText.getText().toString().trim();
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+        if(email.isEmpty() && password.isEmpty()){
+            Toast.makeText(getContext(), "Pola nie mogą być puste", Toast.LENGTH_LONG).show();
+        }else {
+            CustomProgressBar customProgressBar = new CustomProgressBar(getActivity(), "Trwa logowanie");
+            customProgressBar.startProgressBarDialog();
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
 
-                    customProgressBar.dismissDialog();
+                        customProgressBar.dismissDialog();
 
-                    Intent intent2 = new Intent(getContext().getApplicationContext(), MainMenuActivity.class);
-                    startActivity(intent2);
+                        Intent intent2 = new Intent(getContext().getApplicationContext(), MainMenuActivity.class);
+                        startActivity(intent2);
 
-                    customToast.showToast(getActivity(), "Pomyslnie zalogowano", R.drawable.ic_outline_done_24);
+                        customToast.showToast(getActivity(), "Pomyslnie zalogowano", R.drawable.ic_outline_done_24);
 
-                } else {
-                    customProgressBar.dismissDialog();
+                    } else {
+                        customProgressBar.dismissDialog();
 
-                    customToast.showToast(getActivity(), "Logowanie nie powiodło się", R.drawable.ic_baseline_error_outline_24);
+                        customToast.showToast(getActivity(), "Logowanie nie powiodło się", R.drawable.ic_baseline_error_outline_24);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     private void loadFragment(Fragment fragment) {

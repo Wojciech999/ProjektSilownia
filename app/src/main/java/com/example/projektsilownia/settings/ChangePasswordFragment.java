@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
 import com.example.projektsilownia.R;
@@ -22,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ChangePasswordFragment extends Fragment implements View.OnClickListener {
 
-    private Button arrowBack_button;
+    private AppCompatImageButton arrowBack_button;
     private Button btnChangePassword;
     private EditText editTextOldPassword, editTextNewPassword, editTextRepeatPassword;
 
@@ -51,7 +52,7 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_change_password, container, false);
 
-        arrowBack_button = (Button) rootView.findViewById(R.id.arrowBack_button);
+        arrowBack_button = (AppCompatImageButton) rootView.findViewById(R.id.arrowBackBtn);
         arrowBack_button.setOnClickListener(this);
 
         btnChangePassword = (Button) rootView.findViewById(R.id.btnChangePassword);
@@ -69,7 +70,7 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
         Fragment fragment = null;
 
         switch (view.getId()) {
-            case R.id.arrowBack_button:
+            case R.id.arrowBackBtn:
                 if (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStack();
                 }
