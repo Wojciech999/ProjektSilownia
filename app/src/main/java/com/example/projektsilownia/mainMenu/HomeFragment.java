@@ -1,7 +1,6 @@
 package com.example.projektsilownia.mainMenu;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -17,10 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.projektsilownia.MainActivity;
 import com.example.projektsilownia.R;
 import com.example.projektsilownia.custom.CustomDialogLogOut;
-import com.example.projektsilownia.custom.CustomProgressBar;
+import com.example.projektsilownia.custom.ProfilPictureDialog;
 import com.example.projektsilownia.settings.SettingsFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -29,13 +26,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private CardView btn_logout, btn_settings;
     private static TextView textViewName, textViewOld, textViewWeight, textViewHeight, textViewBMI;
-
+    private CircleImageView circleImageView;
+    private DatabaseReference rootRef;
     private Fragment fragment = null;
     public String userOnline;
 
@@ -70,7 +71,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         textViewHeight = (TextView) rootView.findViewById(R.id.textViewHeight);
         textViewBMI = (TextView) rootView.findViewById(R.id.textViewBMI);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        rootRef = FirebaseDatabase.getInstance().getReference();
         Query query = rootRef.child("Users").orderByChild("uid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -111,7 +112,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         btn_settings = (CardView) rootView.findViewById(R.id.btn_settings);
         btn_settings.setOnClickListener(this);
 
+        circleImageView = (CircleImageView) rootView.findViewById(R.id.imageViewProfil);
+        circleImageView.setOnClickListener(this);
+
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        rootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.child("Users").child(userOnline).child("UserPhoto").child("image").getValue(String.class);
+
+                Picasso.get().load(url)
+                        .placeholder(R.drawable.ic_baseline_person_24).error(R.drawable.ic_baseline_person_24)
+                        .into(circleImageView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public String getUserOnline() {
@@ -132,6 +156,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 fragment = new SettingsFragment();
                 loadFragment(fragment);
                 break;
+            case R.id.imageViewProfil:
+                ProfilPictureDialog profilPictureDialog = new ProfilPictureDialog();
+                profilPictureDialog.show(getActivity().getSupportFragmentManager(),"ProfilPictureDialog");
+                break;
         }
     }
 
@@ -145,7 +173,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left,
-                android.R.anim.slide_out_right,android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right, android.R.anim.slide_in_left,
                 android.R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.fragmentMainMenu, fragment).commit();
         fragmentTransaction.addToBackStack(null);
