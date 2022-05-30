@@ -1,9 +1,11 @@
 package com.example.projektsilownia.mainMenu;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.projektsilownia.R;
+import com.example.projektsilownia.basictraining.BasicTrening;
 import com.example.projektsilownia.custom.CustomDialogLogOut;
 import com.example.projektsilownia.custom.ProfilPictureDialog;
 import com.example.projektsilownia.settings.SettingsFragment;
@@ -34,8 +37,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private CardView btn_logout, btn_settings;
-    private static TextView textViewName, textViewOld, textViewWeight, textViewHeight, textViewBMI;
+    private CardView btn_logout, btn_settings, btn_basic;
+    private static TextView textViewName, textViewOld, textViewWeight, textViewHeight, textViewBMI, textViewtime, textViewkcal;
     private CircleImageView circleImageView;
     private DatabaseReference rootRef;
     private Fragment fragment = null;
@@ -71,6 +74,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         textViewWeight = (TextView) rootView.findViewById(R.id.textViewWeight);
         textViewHeight = (TextView) rootView.findViewById(R.id.textViewHeight);
         textViewBMI = (TextView) rootView.findViewById(R.id.textViewBMI);
+        textViewtime = (TextView) rootView.findViewById(R.id.textViewtime);
+        textViewkcal = (TextView) rootView.findViewById(R.id.textViewkcal);
 
         rootRef = FirebaseDatabase.getInstance().getReference();
         Query query = rootRef.child("Users").orderByChild("uid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
@@ -107,11 +112,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         };
         query.addListenerForSingleValueEvent(valueEventListener);
 
+        Query queryStats = rootRef.child("Users").orderByChild("uid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
+        ValueEventListener valueEventListenerStats = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    userOnline = ds.getKey();
+                    if (!userOnline.equals(null)) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference db = database.getReference().child("Users").child(userOnline).child("Statistic");
+                        db.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @SuppressLint("SetTextI18n")
+                            public void onDataChange(DataSnapshot dataStats) {
+                                textViewtime.setText(String.valueOf(dataStats.child("time").getValue()));
+                                textViewkcal.setText(String.valueOf(dataStats.child("calories").getValue()));
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+
+                        });
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        };
+        queryStats.addListenerForSingleValueEvent(valueEventListenerStats);
+
         btn_logout = (CardView) rootView.findViewById(R.id.btn_logout);
         btn_logout.setOnClickListener(this);
 
         btn_settings = (CardView) rootView.findViewById(R.id.btn_settings);
         btn_settings.setOnClickListener(this);
+
+        btn_basic = (CardView) rootView.findViewById(R.id.btn_basic);
+        btn_basic.setOnClickListener(this);
 
         circleImageView = (CircleImageView) rootView.findViewById(R.id.imageViewProfil);
         circleImageView.setOnClickListener(this);
@@ -154,8 +193,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-
-
     public String getUserOnline() {
         return userOnline;
     }
@@ -177,6 +214,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.imageViewProfil:
                 ProfilPictureDialog profilPictureDialog = new ProfilPictureDialog();
                 profilPictureDialog.show(getActivity().getSupportFragmentManager(),"ProfilPictureDialog");
+                break;
+            case R.id.btn_basic:
+                Intent intent2 = new Intent(getContext().getApplicationContext(), BasicTrening.class);
+                startActivity(intent2);
                 break;
         }
     }

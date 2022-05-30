@@ -103,7 +103,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/textViewtime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -129,10 +129,10 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/imageView2"
                         app:layout_constraintStart_toStartOf="@+id/imageView2"
-                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+                        app:layout_constraintTop_toTopOf="@+id/textViewtime" />
 
                     <TextView
-                        android:id="@+id/textView17"
+                        android:id="@+id/textViewkcal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
@@ -143,7 +143,7 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/imageView3"
                         app:layout_constraintStart_toStartOf="@+id/imageView3"
-                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+                        app:layout_constraintTop_toTopOf="@+id/textViewtime" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -308,6 +308,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_basic"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_row="3"
@@ -318,9 +319,9 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="16dp"
+                        android:backgroundTint="#FFFFFF"
                         android:clickable="true"
                         android:focusable="true"
-                        android:backgroundTint="#FFFFFF"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="3dp">
