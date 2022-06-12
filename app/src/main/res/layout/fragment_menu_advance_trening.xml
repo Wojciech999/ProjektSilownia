@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#454545"
-    tools:context=".basictraining.MenuBasicTreningFragment">
-
+    tools:context=".advancetraining.MenuAdvanceTreningFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -57,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titleLayout">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/enduranceExercisesBtn"
+                android:id="@+id/advancEnduranceExercisesBtn"
                 android:backgroundTint="#9E9E9E"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -73,7 +72,7 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening Wytrzymałościowy" />
+                        android:text="Zaawansowany Trening Wytrzymałościowy" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -81,13 +80,13 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jesteś biegaczem, kolarzem, pływakiem, narciarzem biegowym lub innym sportowcem pragnącym zwiększyć swoją wytrzymałość? Jeżeli tak, to Trening wytrzymałościowy jest właśnie dla ciebie." />
+                        android:text="Zaawansowane ćwiczenia wytrzymałościowe nie muszą być wykonywane na siłowni. Śmiało można trenować w domowym zaciszu bez specjalistycznych sprzętów. Rozpoczynamy od trwającej około 5 minut rozgrzewki, która ma na celu przygotować ciało do wysiłku, rozgrzać mięśnie i zmniejszyć ryzyko kontuzji." />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/relaxationExercisesBtn"
+                android:id="@+id/advancRelaxationExercisesBtn"
                 android:backgroundTint="#9E9E9E"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
@@ -104,7 +103,7 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening Releksacyjny" />
+                        android:text="Zaawansowany Trening Releksacyjny" />
 
                     <TextView
                         android:id="@+id/textView99"
@@ -112,13 +111,13 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Relaksacja to umiejętność, którą należy trenować, dla osiągnięcia długofalowych korzyści. Dzięki temu uwolnisz się od stresu, lęku. Będę Cię zatem zachęcać, do regularnego ćwiczenia technik relaksacji w ciągu tygodnia, pomiędzy sesjami." />
+                        android:text="Zaawansowany trening relaksacyjny: W stanie relaksu zwalnia i pogłębia się oddech, zwalnia serce, zmniejsza się zużycie tlenu i napięcie mięśniowe, rozszerzają się niektóre naczynia krwionośne i zmniejsza się tempo przemiany materii. To rodzaj przyjemnej psychicznej i fizjologicznej demobilizacji, który odczuwa się jako wewnętrzny spokój, odprężenie, błogostan oraz łagodną euforię." />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/strengthExercisesBtn"
+                android:id="@+id/advancStrengthExercisesBtn"
                 android:backgroundTint="#9E9E9E"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
@@ -135,7 +134,7 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening Siłowy" />
+                        android:text="Zaawansowany Trening Siłowy" />
 
                     <TextView
                         android:id="@+id/textView969"
@@ -143,7 +142,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening siłowy regularnie wykonywany wpływa korzystnie nie tylko na aspekty estetyczne sylwetki – uczy pokory, cierpliwości i pozwala wyładować negatywne emocje." />
+                        android:text="Zaawansowany trening siłowy: Plan treningowy jest ukierunkowany głównie pod rozbudowę siły i masy mięśniowej klatki piersiowej. Uda oraz ramiona są zdecydowanie moimi dominującymi partiami mięśniowymi, stąd trening nie jest objętościowo bardzo rozbudowany. Pamiętajmy, aby priorytet ustalić sobie tylko na jedną partię mięśniową i w danym mikrocyklu treningowym poświęcić uwagę głównie tej grupie mięśniowej." />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

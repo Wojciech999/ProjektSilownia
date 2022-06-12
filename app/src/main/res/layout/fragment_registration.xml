@@ -38,11 +38,11 @@
 
             <TextView
                 android:id="@+id/titleFragment"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
+                android:gravity="start"
                 android:text="Rejestracja"
                 android:textColor="#FFFFFF"
                 android:textSize="26sp" />
@@ -53,13 +53,12 @@
             android:id="@+id/regEditTextLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
             android:orientation="vertical"
             android:padding="16dp"
             app:layout_constraintBottom_toTopOf="@+id/regParametersLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleLayout">
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutLg"
@@ -160,12 +159,12 @@
             android:id="@+id/regParametersLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
             android:orientation="vertical"
             android:padding="16dp"
             app:layout_constraintBottom_toTopOf="@+id/register_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regEditTextLayout">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -367,6 +366,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="OnClick" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/login_icon"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/regEditTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

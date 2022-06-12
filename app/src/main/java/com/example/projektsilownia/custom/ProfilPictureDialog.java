@@ -140,7 +140,7 @@ public class ProfilPictureDialog extends DialogFragment implements View.OnClickL
                 break;
             case R.id.btnChangeDialogProfil:
                 if (getImageUri() != null) {
-                    Toast.makeText(getContext(), "dupa", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Pomyślnie dodano zdjęcie", Toast.LENGTH_LONG).show();
                     uploadImage();
                 } else {
                     Toast.makeText(getContext(), "Nie wybrano zdjęcia", Toast.LENGTH_LONG).show();

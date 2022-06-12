@@ -115,10 +115,14 @@ public class ChangeLoginFragment extends Fragment implements View.OnClickListene
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                customToast.showToast(getActivity(), "Udało się zmienić dane do logowania", R.drawable.ic_outline_done_24);
+                                                customToast.showToast(getActivity(),
+                                                        "Udało się zmienić dane do logowania",
+                                                        R.drawable.ic_outline_done_24);
                                                 customProgressBar.dismissDialog();
                                             } else {
-                                                customToast.showToast(getActivity(), "Nie udało się zmienić danych logowania", R.drawable.ic_baseline_error_outline_24);
+                                                customToast.showToast(getActivity(),
+                                                        "Nie udało się zmienić danych logowania",
+                                                        R.drawable.ic_baseline_error_outline_24);
                                                 customProgressBar.dismissDialog();
                                             }
                                         }

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.projektsilownia.R;
+import com.example.projektsilownia.advancetraining.AdvanceTrening;
 import com.example.projektsilownia.basictraining.BasicTrening;
 import com.example.projektsilownia.custom.CustomDialogLogOut;
 import com.example.projektsilownia.custom.ProfilPictureDialog;
@@ -37,12 +37,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private CardView btn_logout, btn_settings, btn_basic;
+    private CardView btn_logout, btn_settings, btn_basic, btn_advanced;
     private static TextView textViewName, textViewOld, textViewWeight, textViewHeight, textViewBMI, textViewtime, textViewkcal;
     private CircleImageView circleImageView;
     private DatabaseReference rootRef;
     private Fragment fragment = null;
-    public String userOnline;
+    public String userOnlineNow;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -83,14 +83,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    userOnline = ds.getKey();
-                    if (!userOnline.equals(null)) {
+                    userOnlineNow = ds.getKey();
+                    if (!userOnlineNow.equals(null)) {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference db = database.getReference().child("Users").child(userOnline).child("Parameters");
+                        DatabaseReference db = database.getReference().child("Users").child(userOnlineNow).child("Parameters");
                         db.addListenerForSingleValueEvent(new ValueEventListener() {
                             @SuppressLint("SetTextI18n")
                             public void onDataChange(DataSnapshot data) {
-                                textViewName.setText(userOnline.toString());
+                                textViewName.setText(userOnlineNow.toString());
                                 textViewOld.setText(String.valueOf(data.child("old").getValue()));
                                 textViewWeight.setText(String.valueOf(data.child("weight").getValue()));
                                 textViewHeight.setText(String.valueOf(data.child("height").getValue()));
@@ -117,10 +117,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    userOnline = ds.getKey();
-                    if (!userOnline.equals(null)) {
+                    userOnlineNow = ds.getKey();
+                    if (!userOnlineNow.equals(null)) {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference db = database.getReference().child("Users").child(userOnline).child("Statistic");
+                        DatabaseReference db = database.getReference().child("Users").child(userOnlineNow).child("Statistic");
                         db.addListenerForSingleValueEvent(new ValueEventListener() {
                             @SuppressLint("SetTextI18n")
                             public void onDataChange(DataSnapshot dataStats) {
@@ -152,6 +152,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         btn_basic = (CardView) rootView.findViewById(R.id.btn_basic);
         btn_basic.setOnClickListener(this);
 
+        btn_advanced = (CardView) rootView.findViewById(R.id.btn_advanced);
+        btn_advanced.setOnClickListener(this);
+
         circleImageView = (CircleImageView) rootView.findViewById(R.id.imageViewProfil);
         circleImageView.setOnClickListener(this);
 
@@ -179,7 +182,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String url = dataSnapshot.child("Users").child(userOnline).child("UserPhoto").child("image").getValue(String.class);
+                String url = dataSnapshot.child("Users").child(userOnlineNow).child("UserPhoto").child("image").getValue(String.class);
 
                 Picasso.get().load(url)
                         .placeholder(R.drawable.ic_baseline_person_24).error(R.drawable.ic_baseline_person_24)
@@ -193,12 +196,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    public String getUserOnline() {
-        return userOnline;
+    public String getUserOnlineNow() {
+        return userOnlineNow;
     }
 
-    public void setUserOnline(String userOnline) {
-        this.userOnline = userOnline;
+    public void setUserOnlineNow(String userOnlineNow) {
+        this.userOnlineNow = userOnlineNow;
     }
 
     @Override
@@ -218,6 +221,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_basic:
                 Intent intent2 = new Intent(getContext().getApplicationContext(), BasicTrening.class);
                 startActivity(intent2);
+                break;
+            case R.id.btn_advanced:
+                Intent intent3 = new Intent(getContext().getApplicationContext(), AdvanceTrening.class);
+                startActivity(intent3);
                 break;
         }
     }

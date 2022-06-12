@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#454545"
-    tools:context=".basictraining.MenuBasicTreningFragment">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".advancetraining.firstStep.FirstStepAdvanceFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,8 +24,8 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/arrowBackBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
                 android:background="#00FFFFFF"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
@@ -40,10 +39,9 @@
                 android:layout_weight="1"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Wybierz Trening"
+                android:text="Wybierz czas treningu"
                 android:textColor="#FFFFFF"
                 android:textSize="26sp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -57,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titleLayout">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/enduranceExercisesBtn"
+                android:id="@+id/fifteenMinBtnAdvance"
                 android:backgroundTint="#9E9E9E"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -73,7 +71,7 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening Wytrzymałościowy" />
+                        android:text="Trening 15-Minutowy" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -81,46 +79,16 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jesteś biegaczem, kolarzem, pływakiem, narciarzem biegowym lub innym sportowcem pragnącym zwiększyć swoją wytrzymałość? Jeżeli tak, to Trening wytrzymałościowy jest właśnie dla ciebie." />
+                        android:text="Zaawansowany 15 minutowy umożliwiający dynamiczny i szybki rozwój mieśni dla zaawansowanych użytkowników" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/relaxationExercisesBtn"
-                android:backgroundTint="#9E9E9E"
-                android:layout_width="match_parent"
+                android:id="@+id/halfHourBtnAdvance"
                 android:layout_marginTop="16dp"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView88"
-                        style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Trening Releksacyjny" />
-
-                    <TextView
-                        android:id="@+id/textView99"
-                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Relaksacja to umiejętność, którą należy trenować, dla osiągnięcia długofalowych korzyści. Dzięki temu uwolnisz się od stresu, lęku. Będę Cię zatem zachęcać, do regularnego ćwiczenia technik relaksacji w ciągu tygodnia, pomiędzy sesjami." />
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/strengthExercisesBtn"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="#9E9E9E"
-                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -131,19 +99,46 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView858"
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening Siłowy" />
+                        android:text="Trening 30-minutowy"/>
 
                     <TextView
-                        android:id="@+id/textView969"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trening siłowy regularnie wykonywany wpływa korzystnie nie tylko na aspekty estetyczne sylwetki – uczy pokory, cierpliwości i pozwala wyładować negatywne emocje." />
+                        android:text="Dłuży trening trawający 30 minut zawierający zaawansowane ćwiczenia" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/oneHourBtnAdvance"
+                android:backgroundTint="#9E9E9E"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trening 60-Minutowy" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Najdłuższy trening zawierający najbardziej skomplikowane ćwiczenia w planie zaawansowanym" />
+
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

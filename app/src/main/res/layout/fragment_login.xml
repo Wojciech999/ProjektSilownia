@@ -15,6 +15,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/login_icon"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
+
         <LinearLayout
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
@@ -42,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
+                android:gravity="center|start"
                 android:text="Logowanie"
                 android:textColor="#FFFFFF"
                 android:textSize="26sp" />
@@ -50,6 +65,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"

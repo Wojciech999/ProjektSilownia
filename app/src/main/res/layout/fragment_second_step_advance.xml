@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#454545"
-    tools:context=".basictraining.secondStep.SecondStepFragment">
+    tools:context=".advancetraining.secondStep.SecondStepAdvanceFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,24 +39,25 @@
                 android:layout_weight="1"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Trening podstawowy"
+                android:text="Trening zaawansowany"
                 android:textColor="#FFFFFF"
                 android:textSize="26sp" />
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewDisplayTrening"
+            android:id="@+id/recyclerViewDisplayTreningAdvonce"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#7C7C7C"
-            app:layout_constraintBottom_toTopOf="@+id/button_endOfTrening"
+            app:layout_constraintBottom_toTopOf="@+id/button_endOfTreningAdv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
 
+
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_endOfTrening"
+            android:id="@+id/button_endOfTreningAdv"
             android:layout_width="0dp"
             android:layout_height="72dp"
             android:background="@drawable/custom_btn"

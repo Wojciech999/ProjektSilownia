@@ -6,136 +6,170 @@
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="20dp"
+
     android:scrollbars="vertical"
     app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="30dp"
+                android:layout_margin="15dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/gif"
-                    android:layout_width="300dp"
-                    android:layout_height="200dp"
-                    android:text="TextView" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageGif"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/gif"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_baseline_downloading_24" />
+
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/nameTextViewtitle"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Nazwa ćwiczenia:"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                    android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/nameTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                    android:textStyle="normal" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/nameTextView"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Trwa ładowanie..."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/recyclerViewFront"
+                        android:textStyle="normal" />
+                </ScrollView>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/opis"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView1"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Opis jak wykonać:"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                    android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/descTextView"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_marginEnd="16dp"
+                    android:text="Trwa ładowanie..."
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/serie"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView13"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Ilość serii:"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                    android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/numberOfSeriesTextView"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_marginEnd="16dp"
+                    android:text="Trwa ładowanie..."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/recyclerViewFront" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/powtorzenia"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/numberOfRepetitionsTextViewtitle"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Ilość powtórzeń:"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                    android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/numberOfRepetitionsTextView"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+                    android:text="Trwa ładowanie..."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="normal" />
             </LinearLayout>
 

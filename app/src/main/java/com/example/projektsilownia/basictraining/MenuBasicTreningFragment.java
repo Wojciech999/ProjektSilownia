@@ -15,16 +15,17 @@ import android.widget.Button;
 import com.example.projektsilownia.R;
 import com.example.projektsilownia.basictraining.firstStep.FirstStepFragment;
 import com.example.projektsilownia.mainMenu.HomeFragment;
+import com.google.android.material.card.MaterialCardView;
 
 
-public class MenuTreningFragment extends Fragment implements View.OnClickListener {
+public class MenuBasicTreningFragment extends Fragment implements View.OnClickListener {
 
-    private Button enduranceExercisesBtn, relaxationExercisesBtn, strengthExercisesBtn;
+    private MaterialCardView enduranceExercisesBtn, relaxationExercisesBtn, strengthExercisesBtn;
     private AppCompatImageButton arrowBack_button;
     private String firstStepbasic;
     private Fragment fragment = null;
 
-    public MenuTreningFragment() {
+    public MenuBasicTreningFragment() {
         // Required empty public constructor
     }
 

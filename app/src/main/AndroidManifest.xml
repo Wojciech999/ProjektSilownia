@@ -20,6 +20,9 @@
             android:name=".basictraining.BasicTrening"
             android:exported="false" />
         <activity
+            android:name=".advancetraining.AdvanceTrening"
+            android:exported="false" />
+        <activity
             android:name=".mainMenu.MainMenuActivity"
             android:exported="false" />
         <activity
