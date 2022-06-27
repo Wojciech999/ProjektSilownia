@@ -75,7 +75,7 @@ public class MenuBasicTreningFragment extends Fragment implements View.OnClickLi
                 break;
 
             case R.id.relaxationExercisesBtn:
-                setFirstStepbasic("RelaxationExercises");
+                setFirstStepbasic("RelaxingExercises");
                 fragment = new FirstStepFragment(getFirstStepbasic());
                 loadFragment(fragment);
                 break;

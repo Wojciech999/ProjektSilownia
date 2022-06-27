@@ -20,7 +20,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class MenuAdvanceTreningFragment extends Fragment implements View.OnClickListener {
 
-    private MaterialCardView advancEnduranceExercisesBtn, advancRelaxationExercisesBtn, advancStrengthExercisesBtn;
+    private MaterialCardView advancEnduranceExercisesBtn, advancRelaxingExercisesBtn, advancStrengthExercisesBtn;
     private AppCompatImageButton arrowBack_button;
     private String firstStepadvance;
     private Fragment fragment = null;
@@ -48,8 +48,8 @@ public class MenuAdvanceTreningFragment extends Fragment implements View.OnClick
         advancEnduranceExercisesBtn = rootView.findViewById(R.id.advancEnduranceExercisesBtn);
         advancEnduranceExercisesBtn.setOnClickListener(this);
 
-        advancRelaxationExercisesBtn = rootView.findViewById(R.id.advancRelaxationExercisesBtn);
-        advancRelaxationExercisesBtn.setOnClickListener(this);
+        advancRelaxingExercisesBtn = rootView.findViewById(R.id.advancRelaxingExercisesBtn);
+        advancRelaxingExercisesBtn.setOnClickListener(this);
 
         advancStrengthExercisesBtn = rootView.findViewById(R.id.advancStrengthExercisesBtn);
         advancStrengthExercisesBtn.setOnClickListener(this);
@@ -73,8 +73,8 @@ public class MenuAdvanceTreningFragment extends Fragment implements View.OnClick
                 fragment = new FirstStepAdvanceFragment(getFirstStepadvance());
                 loadFragment(fragment);
                 break;
-            case R.id.advancRelaxationExercisesBtn:
-                setFirstStepadvance("RelaxationExercises");
+            case R.id.advancRelaxingExercisesBtn:
+                setFirstStepadvance("RelaxingExercises");
                 fragment = new FirstStepAdvanceFragment(getFirstStepadvance());
                 loadFragment(fragment);
                 break;
