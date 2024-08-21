@@ -234,7 +234,7 @@ public class SecondStepAdvanceFragment extends Fragment implements View.OnClickL
     private void sendTreningToDataBase(int firstStepBasic, int secondStepBasic) {
         //pobranie danych /Users/bob/Statistic -calories -time
         Log.d("Log1", String.valueOf(firstStepBasic) + " " + String.valueOf(secondStepBasic));
-        Log.d("Log6", String.valueOf(userOnline));
+        Log.d("Loggg6", String.valueOf(userOnline));
         Log.d("Log77", getCaloriesStatistic() + " " + getTimeStatistic());
 
         int caloryPush = Integer.parseInt(getCaloriesStatistic()) + getCalories();

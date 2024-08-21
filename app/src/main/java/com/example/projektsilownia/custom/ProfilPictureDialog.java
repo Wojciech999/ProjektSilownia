@@ -25,8 +25,10 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.projektsilownia.R;
 import com.example.projektsilownia.mainMenu.HomeFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -198,53 +200,66 @@ public class ProfilPictureDialog extends DialogFragment implements View.OnClickL
 
 
     private void uploadImage() {
-        if (getImageUri() != null) {
+        Uri imageUri = getImageUri(); // Zakładam, że getImageUri() zwraca URI obrazu
+        if (imageUri != null) {
 
-            ProgressDialog progressDialog
-                    = new ProgressDialog(getContext());
+            // Inicjalizowanie ProgressDialog
+            ProgressDialog progressDialog = new ProgressDialog(getContext());
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
+            // Tworzenie unikalnego odniesienia do pliku w Firebase Storage
             StorageReference ref = storageReference.child("images/" + UUID.randomUUID().toString());
 
-            ref.putFile(getImageUri())
-                    .addOnSuccessListener(
-                            new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                            final String downloadUrl = uri.toString();
-
-                                            String myUri;
-                                            myUri = taskSnapshot.getUploadSessionUri().getPath();
-                                            HashMap<String, Object> userMap = new HashMap<>();
-
-                                            userMap.put("image", downloadUrl);
-
-                                            databaseReference.child(getUserOnline()).child("UserPhoto").updateChildren(userMap);
-
-                                            Toast.makeText(getContext(), "Image Uploaded!!", Toast.LENGTH_SHORT).show();
-                                            progressDialog.dismiss();
-                                        }
-                                    });
-
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
+            // Rozpoczęcie przesyłania pliku
+            ref.putFile(imageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressDialog.dismiss();
-                            Toast.makeText(getContext(), "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // Pobieranie URL po pomyślnym przesłaniu
+                            ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
-                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-                                    progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                                public void onSuccess(Uri uri) {
+                                    String downloadUrl = uri.toString(); // Pobieranie URL do pobrania pliku
+
+                                    // Tworzenie mapy danych do aktualizacji bazy danych
+                                    HashMap<String, Object> userMap = new HashMap<>();
+                                    userMap.put("image", downloadUrl);
+
+                                    // Aktualizowanie bazy danych
+                                    databaseReference.child(getUserOnline()).child("UserPhoto").updateChildren(userMap)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Toast.makeText(getContext(), "Image Uploaded!!", Toast.LENGTH_SHORT).show();
+                                                    } else {
+                                                        Toast.makeText(getContext(), "Database Update Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                    progressDialog.dismiss(); // Zamykanie ProgressDialog
+                                                }
+                                            });
                                 }
                             });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Upload Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss(); // Zamykanie ProgressDialog
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                            progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                        }
+                    });
+
+        } else {
+            Toast.makeText(getContext(), "Image URI is null", Toast.LENGTH_SHORT).show();
         }
     }
 }
