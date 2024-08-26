@@ -26,7 +26,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Wylogowanie"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -36,12 +36,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Czy chcesz się wylogować ? "
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,11 +49,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Tak"
+        android:background="@drawable/custom_btn"
+        android:textColor="@color/white"
+        android:foreground="?attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,6 +64,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="Nie"
+        android:background="@drawable/custom_btn"
+        android:textColor="@color/white"
+        android:foreground="?attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />

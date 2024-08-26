@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".advancetraining.MenuAdvanceTreningFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,14 +13,16 @@
 
         <LinearLayout
             android:id="@+id/titleLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/arrowBackBtn"
@@ -30,17 +32,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
-                android:text="Wybierz Trening"
-                android:textColor="#FFFFFF"
+                android:gravity="center|start"
+                android:text="Wybierz trening"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -57,7 +61,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/advancEnduranceExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -71,13 +75,14 @@
                         android:id="@+id/textView14"
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
+                        android:textColor="@color/white"
                         android:layout_height="wrap_content"
                         android:text="Zaawansowany Trening Wytrzymałościowy" />
 
                     <TextView
                         android:id="@+id/textView15"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Zaawansowane ćwiczenia wytrzymałościowe nie muszą być wykonywane na siłowni. Śmiało można trenować w domowym zaciszu bez specjalistycznych sprzętów. Rozpoczynamy od trwającej około 5 minut rozgrzewki, która ma na celu przygotować ciało do wysiłku, rozgrzać mięśnie i zmniejszyć ryzyko kontuzji." />
@@ -87,7 +92,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/advancRelaxingExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
                 android:layout_height="wrap_content">
@@ -103,12 +108,13 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Zaawansowany Trening Releksacyjny" />
 
                     <TextView
                         android:id="@+id/textView99"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Zaawansowany trening relaksacyjny: W stanie relaksu zwalnia i pogłębia się oddech, zwalnia serce, zmniejsza się zużycie tlenu i napięcie mięśniowe, rozszerzają się niektóre naczynia krwionośne i zmniejsza się tempo przemiany materii. To rodzaj przyjemnej psychicznej i fizjologicznej demobilizacji, który odczuwa się jako wewnętrzny spokój, odprężenie, błogostan oraz łagodną euforię." />
@@ -118,7 +124,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/advancStrengthExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -134,12 +140,13 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Zaawansowany Trening Siłowy" />
 
                     <TextView
                         android:id="@+id/textView969"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Zaawansowany trening siłowy: Plan treningowy jest ukierunkowany głównie pod rozbudowę siły i masy mięśniowej klatki piersiowej. Uda oraz ramiona są zdecydowanie moimi dominującymi partiami mięśniowymi, stąd trening nie jest objętościowo bardzo rozbudowany. Pamiętajmy, aby priorytet ustalić sobie tylko na jedną partię mięśniową i w danym mikrocyklu treningowym poświęcić uwagę głównie tej grupie mięśniowej." />

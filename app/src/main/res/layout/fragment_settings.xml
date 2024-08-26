@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".settings.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,9 +15,11 @@
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,17 +32,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
+                android:gravity="center|start"
                 android:text="Ustawienia"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -62,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ustawienia konta"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -89,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nazwa użytkownika"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -97,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Zmień nazwe użytkownika"
-                android:textColor="#AEAEAE"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
@@ -130,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hasło użytkownika"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -138,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Zmień hasło użytkownika"
-                android:textColor="#AEAEAE"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
@@ -171,7 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Parametry użytkownika"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -179,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Zresetuj parametry statystyczne"
-                android:textColor="#AEAEAE"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
@@ -208,7 +212,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ustawienia Aplikacji"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -235,7 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="O aplikacji"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -243,7 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Informacje o aplikacji"
-                android:textColor="#AEAEAE"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
@@ -276,7 +280,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Warunki dostępności"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <TextView
@@ -284,7 +288,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Informacje o warunkach dostępności spełnionych przez aplikacje"
-                android:textColor="#AEAEAE"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView

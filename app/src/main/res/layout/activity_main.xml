@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF454545"
+    android:background="#F8F8F8"
     tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/fragmentMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FF454545">
+        android:background="#FFFFFF">
 
     </FrameLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".basictraining.MenuBasicTreningFragment">
 
 
@@ -14,14 +14,16 @@
 
         <LinearLayout
             android:id="@+id/titleLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/arrowBackBtn"
@@ -31,17 +33,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
-                android:text="Wybierz Trening"
-                android:textColor="#FFFFFF"
+                android:gravity="center|start"
+                android:text="Wybierz trening"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -58,7 +62,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/enduranceExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -73,12 +77,13 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening Wytrzymałościowy" />
 
                     <TextView
                         android:id="@+id/textView15"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jesteś biegaczem, kolarzem, pływakiem, narciarzem biegowym lub innym sportowcem pragnącym zwiększyć swoją wytrzymałość? Jeżeli tak, to Trening wytrzymałościowy jest właśnie dla ciebie." />
@@ -88,7 +93,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/relaxationExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
                 android:layout_height="wrap_content">
@@ -104,14 +109,15 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening Releksacyjny" />
 
                     <TextView
                         android:id="@+id/textView99"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Relaksacja to umiejętność, którą należy trenować, dla osiągnięcia długofalowych korzyści. Dzięki temu uwolnisz się od stresu, lęku. Będę Cię zatem zachęcać, do regularnego ćwiczenia technik relaksacji w ciągu tygodnia, pomiędzy sesjami." />
                 </LinearLayout>
 
@@ -119,7 +125,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/strengthExercisesBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -135,12 +141,13 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening Siłowy" />
 
                     <TextView
                         android:id="@+id/textView969"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Trening siłowy regularnie wykonywany wpływa korzystnie nie tylko na aspekty estetyczne sylwetki – uczy pokory, cierpliwości i pozwala wyładować negatywne emocje." />

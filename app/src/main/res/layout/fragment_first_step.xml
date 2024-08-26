@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".basictraining.firstStep.FirstStepFragment">
 
@@ -11,38 +11,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/titleLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/arrowBackBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
-            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/titleFragment"
+        <LinearLayout
+            android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="serif"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
-            android:text="Wybierz czas treningu"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
-    </LinearLayout>
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/arrowBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/titleFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:gravity="center|start"
+                android:text="Wybierz czas treningu"
+                android:textColor="#000000"
+                android:textSize="26sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -56,7 +61,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/fifteenMinBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -71,12 +76,13 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening 15-Minutowy" />
 
                     <TextView
                         android:id="@+id/textView15"
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bardzo krótkie treningi również są efektywne pod kątem budowania siły i wytrzymałości organizmu. Proponowany zestaw ćwiczeń nie wymaga korzystania ze specjalistycznego sprzętu. Można go wykonać w każdym miejscu — w domu, na zewnątrz, w hotelu. Jeśli zrealizujemy go o poranku, zyskamy dawkę energii na cały dzień." />
@@ -88,7 +94,7 @@
                 android:id="@+id/halfHourBtn"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -102,11 +108,12 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening 30-minutowy"/>
 
                     <TextView
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="30-minutowy trening dla początkujących to idealny trening dla każdego, kto zaczyna przygodę z aktywnością fizyczną i chce w szybki i skuteczny sposób zyskać sylwetkę marzeń. 30 minut treningu z ciężarkami wykonywanego kilka razy w tygodniu może przynieść zaskakujące efekty, 30 minut treningu dla osoby początkującej, to wystarczająco dużo, aby w skuteczny i bezpieczny sposób popracować nad zdrowiem i piękną figurą. ." />
@@ -116,7 +123,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/oneHourBtn"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#283593"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -130,11 +137,12 @@
                         style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="Trening 60-Minutowy" />
 
                     <TextView
                         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jeśli interesuje cię skuteczne odchudzanie, oprócz diety weź pod uwagę dwa typy treningu: oporowy i aerobowy. Okazuje się bowiem, że najlepsze przy spalaniu tłuszczu jest stopniowe zwiększanie obciążenia towarzyszącego ćwiczeniom. Sesja na redukcję na siłowni nie powinna trwać dłużej niż 60 minut." />

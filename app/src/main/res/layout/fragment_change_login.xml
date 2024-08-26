@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".settings.ChangeLoginFragment">
 
@@ -15,9 +15,11 @@
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,17 +32,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
+                android:gravity="center|start"
                 android:text="Zmień dane do logowania"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -60,7 +64,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/white"
                 app:boxStrokeWidth="2dp"
                 app:counterEnabled="true"
@@ -83,8 +87,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Podaj nową nazwę email"
                     android:maxLength="26"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,7 +97,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/white"
                 app:boxStrokeWidth="2dp"
                 app:counterEnabled="true"
@@ -116,8 +120,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Podaj starą nazwę email"
                     android:maxLength="26"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,28 +130,28 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white">
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Password_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Podaj hasło"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,9 +165,9 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/custom_btn"
+            android:textColor="@color/white"
             android:foreground="?attr/selectableItemBackground"
             android:text="Zmień nazwe użytkownika"
-            android:textColor="@color/white"
             android:textStyle="bold"
             android:translationZ="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
