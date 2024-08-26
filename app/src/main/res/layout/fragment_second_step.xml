@@ -67,7 +67,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="OnClick" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewDisplayTrening"
+            tools:ignore="OnClick,SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

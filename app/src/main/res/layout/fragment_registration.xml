@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".RegistrationFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,13 +15,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="231dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/login_icon"
+            android:textColor="#283593"
+            app:layout_constraintBottom_toTopOf="@+id/regEditTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout"
+            app:tint="#3E383B" />
+
         <LinearLayout
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -34,17 +52,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="start"
+                android:gravity="center|start"
                 android:text="Rejestracja"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -65,22 +85,22 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="12"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white">
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/login_editText"
@@ -88,8 +108,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Login"
                     android:maxLength="13"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,28 +118,28 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white">
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,20 +148,20 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white">
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextNewPassword"
@@ -149,8 +169,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Hasło"
                     android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -179,9 +199,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="Podaj wiek: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_old"
@@ -190,6 +210,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     android:text="+" />
 
                 <EditText
@@ -201,9 +223,9 @@
                     android:fontFamily="sans-serif-light"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -211,9 +233,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="lat"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_old"
@@ -221,6 +243,8 @@
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     android:foregroundGravity="center_vertical|center"
                     android:text="-" />
             </LinearLayout>
@@ -239,9 +263,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="Podaj wzrost: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_height"
@@ -249,6 +273,8 @@
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     android:foregroundGravity="center_vertical|center"
                     android:text="+" />
 
@@ -261,9 +287,9 @@
                     android:fontFamily="sans-serif-light"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -271,9 +297,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="cm"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_height"
@@ -281,6 +307,8 @@
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     android:foregroundGravity="center_vertical|center"
                     android:text="-" />
             </LinearLayout>
@@ -299,9 +327,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="Podaj wagę: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_weight"
@@ -311,6 +339,8 @@
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
                     android:text="+"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <EditText
@@ -322,9 +352,9 @@
                     android:fontFamily="sans-serif-light"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -332,9 +362,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:shadowColor="#FFFFFF"
+                    android:shadowColor="#000000"
                     android:text="kg"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_weight"
@@ -342,6 +372,8 @@
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:backgroundTint="#283593"
+                    android:textColor="@color/white"
                     android:foregroundGravity="center_vertical|center"
                     android:text="-" />
             </LinearLayout>
@@ -366,19 +398,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="OnClick" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/login_icon"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/regEditTextLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

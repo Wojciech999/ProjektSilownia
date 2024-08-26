@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,25 +18,28 @@
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="256dp"
-            android:layout_height="256dp"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:src="@drawable/login_icon"
-            android:textColor="#000000"
+            android:textColor="#283593"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/titleLayout"
+            app:tint="#3E383B" />
 
         <LinearLayout
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -49,17 +52,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
                 android:gravity="center|start"
                 android:text="Logowanie"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -69,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="24dp"
             app:layout_constraintBottom_toTopOf="@+id/btnChangePassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,20 +85,20 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white"
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="100dp">
 
@@ -102,8 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -111,20 +116,20 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                app:counterTextColor="@color/white"
+                app:counterTextColor="@color/black"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/white"
+                app:endIconTint="@color/black"
                 app:helperText="Wymagany*"
                 app:helperTextTextColor="#FF0000"
-                app:hintTextColor="@color/white"
-                app:passwordToggleTint="@color/white"
-                app:placeholderTextColor="@color/white"
-                app:prefixTextColor="@color/white"
-                app:startIconTint="@color/white"
-                app:suffixTextColor="@color/white">
+                app:hintTextColor="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:placeholderTextColor="@color/black"
+                app:prefixTextColor="@color/black"
+                app:startIconTint="@color/black"
+                app:suffixTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextNewPassword"
@@ -132,8 +137,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Hasło"
                     android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     tools:layout_editor_absoluteX="2dp"
                     tools:layout_editor_absoluteY="329dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -143,9 +148,9 @@
             android:id="@+id/btnChangePassword"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/custom_btn"
             android:foreground="?attr/selectableItemBackground"
             android:text="Zaloguj się"

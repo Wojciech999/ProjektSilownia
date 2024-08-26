@@ -144,7 +144,7 @@ public class SecondStepFragment extends Fragment implements View.OnClickListener
         DatabaseReference db = database.getReference().child("Users").child(String.valueOf(userOnline)).child("Statistic");
         db.addListenerForSingleValueEvent(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
-            public void onDataChange(DataSnapshot dataStats) {
+            public void onDataChange(@NonNull DataSnapshot dataStats) {
                 setTimeStatistic(String.valueOf(dataStats.child("time").getValue()));
                 setCaloriesStatistic(String.valueOf(dataStats.child("calories").getValue()));
             }
@@ -158,11 +158,13 @@ public class SecondStepFragment extends Fragment implements View.OnClickListener
         return rootView;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
             case R.id.arrowBackBtn:
+                assert getFragmentManager() != null;
                 if (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStack();
                 }
@@ -244,8 +246,8 @@ public class SecondStepFragment extends Fragment implements View.OnClickListener
         Log.d("Log9", String.valueOf(timePush));
 
         Map<String, Object> statistic = new HashMap<String, Object>();
-        statistic.put("calories", caloryPush);
-        statistic.put("time", timePush);
+        statistic.put("calories", 777);
+        statistic.put("time", 777);
 
         FirebaseDatabase.getInstance().getReference("Users")
                 .child(userOnline).child("Statistic")
