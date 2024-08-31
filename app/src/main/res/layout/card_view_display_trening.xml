@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="#E6E6E6"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +63,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Nazwa ćwiczenia:"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
@@ -97,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
                     android:text="Opis jak wykonać:"
                     android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
@@ -127,6 +130,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Ilość serii:"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 
@@ -157,6 +161,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Ilość powtórzeń:"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/recyclerViewFront"
                     android:textStyle="bold" />
 

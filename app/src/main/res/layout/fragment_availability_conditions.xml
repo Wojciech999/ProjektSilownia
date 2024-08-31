@@ -43,7 +43,7 @@
                 android:layout_weight="1"
                 android:fontFamily="serif"
                 android:gravity="center|start"
-                android:text="Wybierz czas treningu"
+                android:text="Dostępność mobilna"
                 android:textColor="#000000"
                 android:textSize="26sp" />
 

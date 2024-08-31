@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="#FFFFFF"
     tools:context=".settings.ChangeLoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,9 +15,11 @@
             android:id="@+id/titleLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,17 +32,19 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:tint="@color/black"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/titleFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:gravity="center"
+                android:gravity="center|start"
                 android:text="Zmień parametry użytkownika"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="26sp" />
 
         </LinearLayout>
@@ -70,7 +74,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="Podaj wiek: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_old"
@@ -79,7 +83,10 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
-                    android:text="+" />
+                    android:text="+"
+                    android:backgroundTint="#283593" />
+
+
 
                 <EditText
                     android:id="@+id/number_old_ediText"
@@ -92,7 +99,7 @@
                     android:maxLength="3"
                     android:shadowColor="#FFFFFF"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -102,7 +109,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="lat"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_old"
@@ -111,7 +118,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
-                    android:text="-" />
+                    android:text="-"
+                    android:backgroundTint="#283593"/>
             </LinearLayout>
 
             <LinearLayout
@@ -130,7 +138,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="Podaj wzrost: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_height"
@@ -139,7 +147,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
-                    android:text="+" />
+                    android:text="+"
+                    android:backgroundTint="#283593" />
 
                 <EditText
                     android:id="@+id/number_height_ediText"
@@ -152,7 +161,7 @@
                     android:maxLength="3"
                     android:shadowColor="#FFFFFF"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -162,7 +171,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="cm"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_height"
@@ -171,7 +180,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
-                    android:text="-" />
+                    android:text="-"
+                    android:backgroundTint="#283593" />
             </LinearLayout>
 
             <LinearLayout
@@ -190,7 +200,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="Podaj wagę: "
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_plus_weight"
@@ -200,7 +210,8 @@
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
                     android:text="+"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:backgroundTint="#283593" />
 
                 <EditText
                     android:id="@+id/number_weight_ediText"
@@ -213,7 +224,7 @@
                     android:maxLength="3"
                     android:shadowColor="#FFFFFF"
                     android:text="0"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -223,7 +234,7 @@
                     android:fontFamily="sans-serif-light"
                     android:shadowColor="#FFFFFF"
                     android:text="kg"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Button
                     android:id="@+id/btn_minus_weight"
@@ -232,7 +243,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:foregroundGravity="center_vertical|center"
-                    android:text="-" />
+                    android:text="-"
+                    android:backgroundTint="#283593" />
             </LinearLayout>
 
         </LinearLayout>

@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="asd asdads asdcommon_google_play_services_enable_button"
-        android:textColor="#FFF"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:gravity="center"
         android:layout_marginRight="10dp"
